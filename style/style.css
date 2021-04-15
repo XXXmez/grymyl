@@ -1,0 +1,50 @@
+div {
+    border: 1px solid white;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+}
+.main {
+    overflow-x: hidden;
+}
+.home {
+    height: calc(100vh + 50px);
+    position: relative;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imageBack {
+    background-color: rgb(0, 17, 255);
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.main_title {
+    z-index: 2;
+}
+.text {
+    background-color: aquamarine;
+}
+.nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    background-color: brown;
+    width: 100vw;
+}
+.about {
+    background-color: bisque;
+    height: 100vh;
+}
