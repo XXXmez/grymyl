@@ -8,6 +8,8 @@ div {
 }
 body {
     overflow-x: hidden;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
 }
 .main {
     overflow-x: hidden;
@@ -34,7 +36,18 @@ body {
     z-index: 2;
 }
 .text {
-    background-color: aquamarine;
+    font-size: 43px;
+    line-height: 48px;
+    margin-bottom: 20px;
+}
+.button {
+    border: 1px solid white;
+    padding: 15px;
+    transition: all 0.5s;
+}
+.button:hover {
+    background-color: aqua;
+    border-color: aqua;
 }
 .nav {
     position: absolute;
@@ -45,6 +58,34 @@ body {
     width: 100vw;
 }
 .about {
+    background-image: url(/image/back/back1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-color: bisque;
     height: 100vh;
+}
+.about2 {
+    background-image: url(/image/back/back2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: burlywood;
+    height: 100vh;
+}
+.about3 {
+    background-image: url(/image/back/back3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: darkcyan;
+    height: 100vh;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
