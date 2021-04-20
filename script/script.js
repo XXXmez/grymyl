@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //ищем элементы на сайте
     const nav = document.querySelector('.nav'),
           buttonViewWork = document.querySelector('.button_view_work'),
           about = document.querySelector('.about');
     
+    //функция фиксации меню при прокрутке
     function navFixed() {
         let a = window.innerHeight;
         let wpYO = window.pageYOffset;
@@ -15,13 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('fixed')
         }
     }
+    navFixed()
+
+    //функция прокрутки до элемента
     function viewWork() {
         let clY = about.getBoundingClientRect().y
         //console.dir(clY);
         window.scrollBy(0, clY)
     }
 
-    navFixed()
+    function anchor(){
+        const dataLink = document.querySelectorAll('#link-nav')
+        console.log(dataLink);
+
+    }
+    anchor()
+    
 
     document.addEventListener('scroll', navFixed)
     buttonViewWork.addEventListener('click', viewWork)
