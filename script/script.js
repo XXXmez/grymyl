@@ -26,14 +26,53 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollBy(0, clY)
     }
 
+    document.addEventListener('scroll', navFixed)
+    buttonViewWork.addEventListener('click', viewWork)
+
+
+
+
+
+
+
+
+    //Меню якорей
+    const navDiv = document.querySelectorAll('.nav div')
+    const dataLink = document.querySelectorAll('[data-link-nav]')
+    navDiv.forEach( e => {
+        e.addEventListener('click', testes1)
+    })
+
+    function testes1(e) {
+        //console.log('1', e.target.dataset.targetLink);
+        for(let i=0; i<dataLink.length;i++) {
+            if(e.target.dataset.targetLink == dataLink[i].dataset.linkNav) {
+                //console.log(true);
+                //console.log(dataLink[i].getBoundingClientRect().y);
+                const topOffset = document.querySelector('.nav').offsetHeight;
+                const elementPosition = dataLink[i].getBoundingClientRect().top;
+                const offsetPosition = elementPosition - topOffset;
+
+                //window.scrollBy(0, dataLink[i].getBoundingClientRect().y)
+                
+                window.scrollBy({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+
+
+    /*
     function anchor(){
-        const dataLink = document.querySelectorAll('#link-nav')
-        console.log(dataLink);
+
+        const dataLink = document.querySelectorAll('[data-link-nav]')
+        dataLink.forEach(elem => console.log(elem.dataset.linkNav))
 
     }
     anchor()
-    
+    */
 
-    document.addEventListener('scroll', navFixed)
-    buttonViewWork.addEventListener('click', viewWork)
+    
 })

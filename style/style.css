@@ -1,6 +1,15 @@
+/*ТЕСТ*/
 div {
     border: 1px solid white;
 }
+.nav {
+    display: flex;
+}
+.nav div:hover {
+    background-color: aqua;
+}
+
+/*ТЕСТ*/
 * {
     margin: 0;
     padding: 0;
