@@ -49,18 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if(e.target.dataset.targetLink == dataLink[i].dataset.linkNav) {
                 //console.log(true);
                 //console.log(dataLink[i].getBoundingClientRect().y);
-                const topOffset = document.querySelector('.nav').offsetHeight;
-                const elementPosition = dataLink[i].getBoundingClientRect().top;
-                const offsetPosition = elementPosition - topOffset;
+                
+                //const topOffset = document.querySelector('.nav').offsetHeight;
+                //const elementPosition = dataLink[i].getBoundingClientRect().top;
+                //const offsetPosition = elementPosition - topOffset;
 
                 //window.scrollBy(0, dataLink[i].getBoundingClientRect().y)
                 
                 window.scrollBy({
-                    top: offsetPosition,
+                    //top: offsetPosition,
+                    top: dataLink[i].getBoundingClientRect().y,
                     behavior: 'smooth'
                 });
             }
         }
+    }
+
+
+    //подсветка меню
+    for () {
+        
     }
 
 
