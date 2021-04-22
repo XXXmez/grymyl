@@ -8,6 +8,9 @@ div {
 .nav div:hover {
     background-color: aqua;
 }
+.nav div.active {
+    background-color: red;
+}
 
 /*ТЕСТ*/
 * {
@@ -83,7 +86,7 @@ body {
     background-size: cover;
     background-position: center;
     background-color: burlywood;
-    height: 100vh;
+    height: calc(100vh + 100px);
 }
 .about3 {
     background-image: url(/image/back/back3.jpg);
@@ -98,4 +101,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+}
+footer {
+    height: 100px;
+    background-color: cadetblue;
 }
