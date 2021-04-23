@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function objectFixed() {
         //console.dir(navSite.offsetTop); //положение объекта от начала сайта
         let wpYO = window.pageYOffset
-        console.log("n", navSite.offsetTop);
-        console.log("w", window.pageYOffset);
         if (wpYO >= objectPos) {
             navSite.classList.add('fixed-r')
         } else {
