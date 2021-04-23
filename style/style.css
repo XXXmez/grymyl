@@ -69,6 +69,66 @@ body {
     background-color: brown;
     opacity: .7;
     width: 100vw;
+    align-items: center;
+}
+.nav div {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+.nav-site {
+    transition: .5s;
+    position: absolute;
+    height: 50px;
+    background-color: bisque;
+    right: 15px;
+    bottom: calc(50px + 15px);
+    display: flex;
+    overflow: hidden;
+
+    color: black;
+}
+.link-site {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    width: 0;
+    transition: .5s;
+}
+.link-site.act {
+    width: 150px;
+}
+.link-site .link {
+    padding: 5px 1px;
+}
+.burger-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 50px;
+    width: 50px;
+}
+.burger-button .line {
+    display: block;
+    height: 4px;
+    width: 35px;
+    background-color: black;
+    transition: .5s;
+    border-radius: 10px;
+}
+.burger-button.act .line:nth-child(1) {
+    transform: rotateZ(
+        45deg
+        ) translate(5px, 5px);
+}
+.burger-button.act .line:nth-child(2) {
+    opacity: 0;
+}
+.burger-button.act .line:nth-child(3) {
+    transform: rotateZ(
+-45deg
+) translate(7px, -8px);
 }
 .about {
     background-image: url(/image/back/back1.jpg);
@@ -97,12 +157,44 @@ body {
     background-color: darkcyan;
     height: 100vh;
 }
-.fixed {
+.about4 {
+    background-image: url(/image/back/back2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: darkcyan;
+    height: 100vh;
+}
+.about5 {
+    background-image: url(/image/back/back1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: darkcyan;
+    height: 100vh;
+}
+.about6 {
+    background-image: url(/image/back/back2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: darkcyan;
+    height: 100vh;
+}
+.fixed-l {
     position: fixed;
     top: 0;
     left: 0;
 }
+.fixed-r {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
 footer {
-    height: 100px;
+    height: 300px;
     background-color: cadetblue;
 }

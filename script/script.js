@@ -1,21 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
     //ищем элементы на сайте
     const nav = document.querySelector('.nav'),
-          buttonViewWork = document.querySelector('.button_view_work'),
-          about = document.querySelector('.about');
+          navSite = document.querySelector('.nav-site'),
+          linkSite = document.querySelector('.link-site'),
+          burgerButton= document.querySelector('.burger-button')
+          //buttonViewWork = document.querySelector('.button_view_work'),
+          //about = document.querySelector('.about');
     
     //функция фиксации меню при прокрутке
     function navFixed() {
         let a = window.innerHeight;
         let wpYO = window.pageYOffset;
         if (wpYO >= a) {
-            nav.classList.add('fixed')
+            nav.classList.add('fixed-l')
         } else {
-            nav.classList.remove('fixed')
+            nav.classList.remove('fixed-l')
         }
     }
     navFixed()
 
+    const objectPos = navSite.offsetTop
+    function objectFixed() {
+        //console.dir(navSite.offsetTop); //положение объекта от начала сайта
+        let wpYO = window.pageYOffset
+        console.log("n", navSite.offsetTop);
+        console.log("w", window.pageYOffset);
+        if (wpYO >= objectPos) {
+            navSite.classList.add('fixed-r')
+        } else {
+            navSite.classList.remove('fixed-r')
+        }
+
+    }
+    objectFixed()
+
+    function clickMenu() {
+        if (!burgerButton.classList.contains('act')) {
+            this.classList.add('act')
+            linkSite.classList.add('act')
+            navSite.classList.add('act')
+        } else {
+            this.classList.remove('act')
+            linkSite.classList.remove('act')
+            navSite.classList.remove('act')
+        }
+    }
+
+    burgerButton.addEventListener('click', clickMenu)
+    document.addEventListener('scroll', objectFixed)
     document.addEventListener('scroll', navFixed)
 
 
