@@ -1,6 +1,6 @@
 /*ТЕСТ*/
 div {
-    border: 1px solid white;
+    /*border: 1px solid white;*/
 }
 .nav {
     display: flex;
@@ -97,6 +97,10 @@ body {
     overflow: hidden;
 
     color: black;
+    width: 50px;
+}
+.nav-site.act {
+    width: auto;
 }
 .link-site {
     display: flex;
