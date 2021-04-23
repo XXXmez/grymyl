@@ -97,10 +97,6 @@ body {
     overflow: hidden;
 
     color: black;
-    width: 50px;
-}
-.nav-site.act {
-    width: auto;
 }
 .link-site {
     display: flex;
