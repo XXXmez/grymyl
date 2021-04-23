@@ -105,16 +105,17 @@ body {
 .link-site {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: start;
     overflow: hidden;
-    width: 0;
+    width: 50px;
     transition: .5s;
 }
 .link-site.act {
-    width: 150px;
+    width: 200px;
 }
 .link-site .link {
     padding: 5px 1px;
+    margin-left: 5px;
 }
 .burger-button {
     display: flex;
@@ -123,6 +124,10 @@ body {
     flex-direction: column;
     height: 50px;
     width: 50px;
+    position: absolute;
+    background-color: brown;
+    right: 0;
+    bottom: 0;
 }
 .burger-button .line {
     display: block;
