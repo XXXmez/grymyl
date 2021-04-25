@@ -1,6 +1,6 @@
 /*ТЕСТ*/
 div {
-    /*border: 1px solid white;*/
+    border: 1px solid white;
 }
 .nav {
     display: flex;
@@ -11,12 +11,12 @@ div {
 .nav div.active {
     background-color: red;
 }
-section {
+section, footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-section p {
+section p, footer p {
     border: 2px solid black;
     padding: 20px;
     background-color: brown;
@@ -158,7 +158,7 @@ body {
 ) translate(7px, -8px);
 }
 .about {
-    background-image: url(/image/back/back1.jpg);
+    background-image: url(../image/back/back1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -167,7 +167,7 @@ body {
     height: 100vh;
 }
 .about2 {
-    background-image: url(/image/back/back2.jpg);
+    background-image: url(../image/back/back2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -176,7 +176,7 @@ body {
     height: calc(100vh + 100px);
 }
 .about3 {
-    background-image: url(/image/back/back3.jpg);
+    background-image: url(../image/back/back3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -185,7 +185,7 @@ body {
     height: 100vh;
 }
 .about4 {
-    background-image: url(/image/back/back2.jpg);
+    background-image: url(../image/back/back2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -194,7 +194,7 @@ body {
     height: 100vh;
 }
 .about5 {
-    background-image: url(/image/back/back1.jpg);
+    background-image: url(../image/back/back1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -203,7 +203,7 @@ body {
     height: 100vh;
 }
 .about6 {
-    background-image: url(/image/back/back2.jpg);
+    background-image: url(../image/back/back2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
