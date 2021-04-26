@@ -40,6 +40,9 @@ section p, footer p {
     -webkit-user-select: none;
     -webkit-touch-callout: none;
 }
+:root {
+    --framing-size: 40px;
+}
 body {
     overflow-x: hidden;
     color: rgb(255, 255, 255);
@@ -145,17 +148,48 @@ body {
     border-radius: 10px;
 }
 .burger-button.act .line:nth-child(1) {
-    transform: rotateZ(
-        45deg
-        ) translate(5px, 5px);
+    transform: rotateZ(45deg) translate(5px, 5px);
 }
 .burger-button.act .line:nth-child(2) {
     opacity: 0;
 }
 .burger-button.act .line:nth-child(3) {
-    transform: rotateZ(
--45deg
-) translate(7px, -8px);
+    transform: rotateZ(-45deg) translate(7px, -8px);
+}
+.frameworks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: #8a3333; */
+    opacity: 0.5;
+}
+.frame {
+    position: absolute;
+    background-color: white;
+}
+.frame-h {
+    height: var(--framing-size);
+    width: 100%;
+}
+.frame-v {
+    height: 100%;
+    width: var(--framing-size);
+}
+.frame-top {
+    transform-origin: top center;
+    top: 0;
+}
+.frame-right {
+    transform-origin: right center;
+    right: 0;
+}
+.frame-bottom {
+    transform-origin: bottom center;
+    bottom: 0;
+}
+.frame-left {
+    transform-origin: left center;
+    left: 0;
 }
 .about {
     background-image: url(../image/back/back1.jpg);
@@ -173,7 +207,7 @@ body {
     background-size: cover;
     background-position: center;
     background-color: burlywood;
-    height: calc(100vh + 100px);
+    height: calc(100vh);
 }
 .about3 {
     background-image: url(../image/back/back3.jpg);
@@ -211,6 +245,7 @@ body {
     background-color: rgb(23, 139, 0);
     height: 100vh;
 }
+
 .fixed-l {
     position: fixed;
     top: 0;

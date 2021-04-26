@@ -3,34 +3,81 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav'),
           navSite = document.querySelector('.nav-site'),
           linkSite = document.querySelector('.link-site'),
-          burgerButton= document.querySelector('.burger-button')
-          //buttonViewWork = document.querySelector('.button_view_work'),
-          //about = document.querySelector('.about');
+          burgerButton= document.querySelector('.burger-button'),
+          about2 = document.querySelector('.about2')
     
     //функция фиксации меню при прокрутке
-    function navFixed() {
-        let a = window.innerHeight;
-        let wpYO = window.pageYOffset;
-        if (wpYO >= a) {
-            nav.classList.add('fixed-l')
-        } else {
-            nav.classList.remove('fixed-l')
-        }
-    }
-    navFixed()
-
     const objectPos = navSite.offsetTop
-    function objectFixed() {
-        //console.dir(navSite.offsetTop); //положение объекта от начала сайта
-        let wpYO = window.pageYOffset
-        if (wpYO >= objectPos) {
-            navSite.classList.add('fixed-r')
-        } else {
-            navSite.classList.remove('fixed-r')
+    function scrollPage () {
+        let wpYO = window.pageYOffset;
+        let a = window.innerHeight;
+        function navFixed() {
+            if (wpYO >= a) {
+                nav.classList.add('fixed-l')
+            } else {
+                nav.classList.remove('fixed-l')
+            }
         }
+        navFixed()
 
+        function objectFixed() {
+            if (wpYO >= objectPos) {
+                navSite.classList.add('fixed-r')
+            } else {
+                navSite.classList.remove('fixed-r')
+            }
+
+        }
+        objectFixed()
+
+        function frameworks () {
+            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                //console.log("ПК");
+                //console.dir(about2);
+                //console.log(about2.clientHeight); 
+                //console.log("н", about2.offsetTop); // точка начала блока
+                //console.log(about2.scrollHeight);
+                //console.log("нп", wpYO+window.innerHeight); // начало блока с прокруткой
+                if (wpYO + window.innerHeight >= about2.offsetTop && wpYO+window.innerHeight <= about2.clientHeight + about2.offsetTop ) {
+                    let centerObj = about2.clientHeight / 2
+                    //console.log('ценрт объекта', centerObj);
+                    //console.log(wpYO+window.innerHeight - about2.offsetTop)
+                    if (centerObj <= wpYO+window.innerHeight - about2.offsetTop) {
+                        let a1 = Math.floor(centerObj),
+                            a2 = wpYO+window.innerHeight,
+                            a3 = about2.offsetTop,
+                            a4 = a2 - a3,
+                            a5 = (a4) - a1
+
+                        console.log('рамки');
+                        console.log("centerObj", a1);
+                        console.log("wpYO+window.innerHeight ",  a2);
+                        console.log("about2.offsetTop", a3);
+                        console.log("wpYO+window.innerHeight - about2.offsetTop", a4);
+                        console.log("(wpYO+window.innerHeight - about2.offsetTop) - centerObj", a5);
+
+                        let framesH = document.querySelectorAll('.frame-h'),
+                            framesV = document.querySelectorAll('.frame-v')
+                        for (let i = 0; i < framesH.length; i++){
+                            framesH[i].style.transform = `matrix(1, 0, 0, .${a5}, 0, 0)`
+                        }
+                        for (let i = 0; i < framesV.length; i++){
+                            framesV[i].style.transform = `matrix(.${a5}, 0, 0, 1, 0, 0)`
+                        }
+
+                    } 
+
+                }
+
+            } else {
+                console.log("Мобил");
+            }  
+        }
+        frameworks ()
     }
-    objectFixed()
+    scrollPage ()
+
+    
 
     function clickMenu() {
         if (!burgerButton.classList.contains('act')) {
@@ -45,14 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     burgerButton.addEventListener('click', clickMenu)
-    document.addEventListener('scroll', objectFixed)
-    document.addEventListener('scroll', navFixed)
+    document.addEventListener('scroll', scrollPage)
 
 
     //Меню якорей
     const dataTargetLink = document.querySelectorAll('[data-target-link]')
-    //console.log(dataTargetLink);
-    //const navDiv = document.querySelectorAll('.nav div')
     const dataLink = document.querySelectorAll('[data-link-nav]')
     dataTargetLink.forEach( e => {
         e.addEventListener('click', anchor)
@@ -61,17 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function anchor(e) {
         for(let i=0; i<dataLink.length;i++) {
             if(e.target.dataset.targetLink == dataLink[i].dataset.linkNav) {
-                //const topOffset = document.querySelector('.nav').offsetHeight;
-                //const elementPosition = dataLink[i].getBoundingClientRect().top;
-                //const offsetPosition = elementPosition - topOffset;
-
-                //window.scrollBy(0, dataLink[i].getBoundingClientRect().y)
-                
                 window.scrollBy({
-                    //top: offsetPosition,
                     top: dataLink[i].getBoundingClientRect().y,
                     behavior: 'smooth'
-                });
+                })
             }
         }
     }
