@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     //ищем элементы на сайте
     const nav = document.querySelector('.nav'),
           navSite = document.querySelector('.nav-site'),
@@ -54,13 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     //console.log(dataTargetLink);
     //const navDiv = document.querySelectorAll('.nav div')
     const dataLink = document.querySelectorAll('[data-link-nav]')
-    dataTargetLink.forEach( e => {
+    for (let a = 0; a < dataTargetLink.length; a++) {
+        dataTargetLink[a].addEventListener('click', anchor)
+    }
+    /*dataTargetLink.forEach( function (e) {
         e.addEventListener('click', anchor)
-    })
+    })*/
 
     function anchor(e) {
-        for(let i=0; i<dataLink.length;i++) {
-            if(e.target.dataset.targetLink == dataLink[i].dataset.linkNav) {
+        for (let i = 0; i < dataLink.length; i++) {
+            if(e.target.dataset.targetLink === dataLink[i].dataset.linkNav) {
+                console.log(e.target.dataset.targetLink);
+                console.log(dataLink[i].dataset.linkNav);
                 //const topOffset = document.querySelector('.nav').offsetHeight;
                 //const elementPosition = dataLink[i].getBoundingClientRect().top;
                 //const offsetPosition = elementPosition - topOffset;
