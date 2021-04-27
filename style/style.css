@@ -1,12 +1,12 @@
 /*ТЕСТ*/
-div {
+/*div {
     border: 1px solid white;
-}
+}*/
 .nav {
     display: flex;
 }
 .nav div:hover {
-    background-color: aqua;
+    background-color: #46475a;
 }
 .nav div.active {
     background-color: red;
@@ -26,6 +26,14 @@ section p, footer p {
 /*ТЕСТ*/
 
 
+@font-face {
+    font-family: "Raleway";
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+@font-face {
+    font-family: "Raleway-bold";
+    src: url(../fonts/Raleway-Bold.ttf);
+}
 
 * {
     margin: 0;
@@ -47,6 +55,8 @@ body {
     overflow-x: hidden;
     color: rgb(255, 255, 255);
     font-size: 14px;
+    font-family: "Raleway";
+    
 }
 .main {
     overflow-x: hidden;
@@ -62,7 +72,7 @@ body {
     align-items: center;
 }
 .imageBack {
-    background-color: rgb(0, 17, 255);
+    background-color: rgb(112 114 144);
     height: 100%;
     width: 100vw;
     position: absolute;
@@ -72,29 +82,52 @@ body {
 .main_title {
     z-index: 2;
 }
-.text {
-    font-size: 43px;
-    line-height: 48px;
+.main_title .text {
+    font-size: 16px;
+    line-height: 22px;
     margin-bottom: 20px;
+    text-align: center;
+    font-family: "Raleway-bold";
+}
+#myName {
+    color: #20253c;
+}
+#frontEnd {
+    color: #f7e018;
 }
 .button {
-    border: 1px solid white;
+    border: 3px solid white;
     padding: 15px;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button > * {
+    pointer-events: none;
+}
+.button > i {
+    margin-left: 5px;
     transition: all 0.5s;
 }
 .button:hover {
-    background-color: aqua;
-    border-color: aqua;
+    background-color: rgb(70 71 90);
+    border-color: rgb(70 71 90);
+}
+.button:hover > i {
+    transform: rotate(90deg);
 }
 .nav {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 50px;
-    background-color: brown;
-    opacity: .7;
+    backdrop-filter: saturate(100%) blur(20px);
+    background-color: rgb(112 114 144 / 70%);
+    /*opacity: .7;*/
     width: 100vw;
     align-items: center;
+    font-family: "Raleway-bold";
 }
 .nav div {
     margin-left: 5px;
@@ -104,7 +137,7 @@ body {
     transition: .5s;
     position: absolute;
     height: 50px;
-    background-color: bisque;
+    background-color: #70729000;
     right: 15px;
     bottom: calc(50px + 15px);
     display: flex;
@@ -119,9 +152,12 @@ body {
     overflow: hidden;
     width: 50px;
     transition: .5s;
+    border-left: 2px solid #343442;
+    border-bottom: 2px solid #343442;
+    font-family: "Raleway-bold";
 }
 .link-site.act {
-    width: 200px;
+    width: 300px;
 }
 .link-site .link {
     padding: 5px 1px;
@@ -135,7 +171,7 @@ body {
     height: 50px;
     width: 50px;
     position: absolute;
-    background-color: brown;
+    background-color: rgb(70 71 90);
     right: 0;
     bottom: 0;
 }
@@ -143,7 +179,7 @@ body {
     display: block;
     height: 4px;
     width: 35px;
-    background-color: black;
+    background-color: #cccddc;
     transition: .5s;
     border-radius: 10px;
 }

@@ -28,8 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navSite.classList.add('fixed-r')
             } else {
                 navSite.classList.remove('fixed-r')
-            }
-
+            } 
         }
         objectFixed()
 
