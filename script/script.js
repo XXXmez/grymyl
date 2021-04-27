@@ -63,16 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log("(scrollTop+windowHeight - about2.offsetTop) - middleObject", a5);*/
 
                         for (let i = 0; i < framesH.length; i++){
-                            if (frameTransMatrix < 100000) {
+                            if (frameTransMatrix < 100000 && frameTransMatrix >= 10000) {
                                 framesH[i].style.transform = `matrix(1, 0, 0, .0${frameTransMatrix}, 0, 0)`
+                            } else if (frameTransMatrix < 10000) {
+                                framesH[i].style.transform = `matrix(1, 0, 0, .00${frameTransMatrix}, 0, 0)`
                             } else {
                                 framesH[i].style.transform = `matrix(1, 0, 0, .${frameTransMatrix}, 0, 0)`
                             }
                         }
 
                         for (let i = 0; i < framesV.length; i++){
-                            if (frameTransMatrix < 100000) {
+                            if (frameTransMatrix < 100000 && frameTransMatrix >= 10000) {
                                 framesV[i].style.transform = `matrix(.0${frameTransMatrix}, 0, 0, 1, 0, 0)`
+                            } else if (frameTransMatrix < 10000) {
+                                framesV[i].style.transform = `matrix(.00${frameTransMatrix}, 0, 0, 1, 0, 0)`
                             } else {
                                 framesV[i].style.transform = `matrix(.${frameTransMatrix}, 0, 0, 1, 0, 0)`
                             }
