@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //функция фиксации меню при прокрутке
     const objectPos = navSite.offsetTop
-    function scrollPage () {
+    function scrollPage (e) {
         let scrollTop = window.pageYOffset;
         let windowHeight = window.innerHeight;
+
+        console.log(e);
 
         function navFixed() {
             if (scrollTop >= windowHeight) {

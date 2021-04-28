@@ -227,6 +227,23 @@ body {
     transform-origin: left center;
     left: 0;
 }
+.card-works {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-auto-rows: 230px 230px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
+.card-work {
+    background-color: rgba(165, 42, 42, 0.541);
+    border:1px solid white
+}
+.card-work.main {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+
 .about {
     background-image: url(../image/back/back1.jpg);
     background-position: center;
@@ -245,6 +262,7 @@ body {
     background-color: burlywood;
     height: calc(100vh);
 }
+
 .about3 {
     background-image: url(../image/back/back3.jpg);
     background-position: center;
