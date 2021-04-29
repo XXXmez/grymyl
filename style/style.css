@@ -16,7 +16,7 @@ section, footer {
     justify-content: center;
     align-items: center;
 }
-section p, footer p {
+section > p, footer > p {
     border: 2px solid black;
     padding: 20px;
     background-color: brown;
@@ -39,6 +39,10 @@ section p, footer p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: white;
 }
 .unseparable {
     user-select: none;
@@ -80,7 +84,7 @@ body {
     left: 0;
 }
 .main_title {
-    z-index: 2;
+    z-index: 3;
 }
 .main_title .text {
     font-size: 16px;
@@ -123,7 +127,7 @@ body {
     left: 0;
     height: 50px;
     backdrop-filter: saturate(100%) blur(20px);
-    background-color: rgb(112 114 144 / 70%);
+    background-color: rgb(112 114 144 / 40%);
     /*opacity: .7;*/
     width: 100vw;
     align-items: center;
@@ -198,6 +202,7 @@ body {
     height: 100%;
     /* background-color: #8a3333; */
     opacity: 0.5;
+    z-index: 1;
 }
 .frame {
     position: absolute;
@@ -227,22 +232,94 @@ body {
     transform-origin: left center;
     left: 0;
 }
-.card-works {
-    display: grid;
-    grid-template-columns: 250px 250px;
-    grid-auto-rows: 230px 230px;
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+.container-pf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
 }
-.card-work {
-    background-color: rgba(165, 42, 42, 0.541);
-    border:1px solid white
+.pf-title {
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-family: "Raleway-bold";
+}
+.card-works {
+    width: 90vw;
+    max-width: 1170px;
+    display: grid;
+    gap: 30px 15px;
+    grid-template-columns: repeat(auto-fill,minmax(330px,1fr));
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 .card-work.main {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+.card-work.main {
+    padding: 40px 40px;
+}
+.card-work {
+    background-color: rgba(165, 42, 42, 0.541);
+    border:1px solid white;
+    padding: 30px 40px;
+    position: relative;
+}
+.cw-title {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-family: "Raleway-bold";
+    text-transform: uppercase;
+}
+.card-work.main > p {
+    max-width: 50%;
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    color: #e0e0e0;
+}
+.card-work > P {
+    max-width: 70%;
+}
+.card-work.main > a {
+    margin-top: 20px;
+    padding: 15px 40px;
+}
+.card-work > a {
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+}
+.cw-image {
+    position: absolute;
+}
+.card-work.main > .cw-image {
+    bottom: 5px;
+    right: 30px;
+    height: 100%;
+}
+.cw-image {
+    bottom: 15px;
+    right: 15px;
+    height: 50%;
+}
+.card-work.all-work > .cw-image {
+    top: 15px;
+    left: 25%;
+    height: 70%;
+}
+.card-work.all-work {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
+.card-work > a:hover {
+    background-color: rgb(243, 152, 152);
+}
 
 .about {
     background-image: url(../image/back/back1.jpg);
@@ -254,13 +331,15 @@ body {
     height: 100vh;
 }
 .about2 {
+    position: relative;
     background-image: url(../image/back/back2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: burlywood;
-    height: calc(100vh);
+    height: calc(100vh - 50px);
+    /*padding: 50px 50px;*/
 }
 
 .about3 {
