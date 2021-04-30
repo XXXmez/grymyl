@@ -1,7 +1,7 @@
 /*ТЕСТ*/
-/*div {
+div {
     border: 1px solid white;
-}*/
+}
 .nav {
     display: flex;
 }
@@ -15,6 +15,7 @@ section, footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 section > p, footer > p {
     border: 2px solid black;
@@ -62,9 +63,9 @@ body {
     font-family: "Raleway";
     
 }
-.main {
+/*.main {
     overflow-x: hidden;
-}
+}*/
 .home {
     height: calc(100vh + 50px);
     position: relative;
@@ -196,6 +197,73 @@ body {
 .burger-button.act .line:nth-child(3) {
     transform: rotateZ(-45deg) translate(7px, -8px);
 }
+
+.container-am {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.am-title {
+
+}
+.features-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.ft-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    opacity: .9;
+}
+.ft-container {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ft-container > img {
+    width: 50%;
+}
+.skills-wrapper {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.my-photo, .skills-container {
+    width: 50%;
+}
+.bar {
+    width: 100%;
+    background: gray;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bar > span {
+    margin-right: 10px;
+}
+.bar-progress {
+    background: aquamarine;
+    width: 90%;
+}
+.bar-name {
+    height: 30px;
+    width: 100px;
+    background: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .frameworks {
     position: absolute;
     width: 100%;
@@ -204,6 +272,12 @@ body {
     opacity: 0.5;
     z-index: 1;
 }
+.frameworks-fixed {
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+}
+
 .frame {
     position: absolute;
     background-color: white;
@@ -238,7 +312,7 @@ body {
     align-items: center;
     z-index: 2;
 }
-.pf-title {
+.pf-title, .am-title {
     margin-bottom: 25px;
     font-size: 30px;
     font-family: "Raleway-bold";
@@ -328,7 +402,8 @@ body {
     background-size: cover;
     background-position: center;
     background-color: bisque;
-    height: 100vh;
+    /*height: 100vh;*/
+    padding:100px 0;
 }
 .about2 {
     position: relative;
@@ -338,8 +413,9 @@ body {
     background-size: cover;
     background-position: center;
     background-color: burlywood;
-    height: calc(100vh - 50px);
-    /*padding: 50px 50px;*/
+    /*height: calc(100vh - 50px);*/
+    padding: 100px 50px;
+    height: 100%;
 }
 
 .about3 {
@@ -414,4 +490,35 @@ footer {
     .nav div:nth-child(7) {
         display: none;
     }
-  }
+}
+
+
+
+
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 650) {
+
+}

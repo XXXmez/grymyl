@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollTop = window.pageYOffset;
         let windowHeight = window.innerHeight;
 
-        console.log(e);
-
         function navFixed() {
             if (scrollTop >= windowHeight) {
                 nav.classList.add('fixed-l')
@@ -35,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         objectFixed()
 
         function frameworks () {
-            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { 
+            if (/*!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)*/ true) { 
                 //console.log("ПК");
                 //console.dir(about2);
                 //console.log(about2.clientHeight); 
@@ -141,8 +139,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function anchor(e) {
         for(let i=0; i<dataLink.length;i++) {
             if(e.target.dataset.targetLink == dataLink[i].dataset.linkNav) {
+                let scrollDistance
+
+                if (i == 0) {
+                    scrollDistance = dataLink[i].getBoundingClientRect().y
+                    
+                } else {
+                    scrollDistance = dataLink[i].getBoundingClientRect().y - nav.offsetHeight
+                }
                 window.scrollBy({
-                    top: dataLink[i].getBoundingClientRect().y,
+                    top: scrollDistance,
                     behavior: 'smooth'
                 })
             }
