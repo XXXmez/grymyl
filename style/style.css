@@ -215,21 +215,22 @@ body {
     align-items: center;
 }
 .ft-row {
+    padding: 0 5px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     background-color: black;
     opacity: .9;
 }
 .ft-container {
+    padding: 0 5px;
     width: 290px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.ft-container > img {
-    width: 50%;
+.ft-container > i {
+    font-size: 45px;
 }
 .skills-wrapper {
     margin: 20px;
